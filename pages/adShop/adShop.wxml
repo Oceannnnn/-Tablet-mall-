@@ -1,0 +1,82 @@
+<!--pages/adShop/adShop.wxml-->
+<view class='f_34 p_40 bg_fe9 c_f'>
+  <text wx:if="{{store_status==3}}">欢迎入驻</text>
+  <text wx:if="{{store_status==0}}">审核中请耐心等待</text>
+  <text wx:if="{{store_status==1}}">审核成功</text>
+</view>
+<view wx:if="{{store_status==3}}">
+  <view class='p_20 flex_i f_32 bor_bom'>
+    <view class='input_left'>店铺名称</view>
+    <input placeholder='请输入店铺名称' class='input ml_20 sheng f_28' value='{{store_name}}' bindinput='bindStore_name'></input>
+  </view>
+  <view class='p_20 flex_i f_32 bor_b'>
+    <view class='input_left'>登入账号</view>
+    <input placeholder='请输入账号' class='input ml_20 sheng f_28' value='{{name}}' bindinput='bindName'></input>
+  </view>
+  <view class='p_20 flex_cb f_32 bor_b'>
+    <view class='input_left'>密码</view>
+    <input placeholder='请输入密码' class='input ml_20 sheng f_28' type='password' value='{{password}}' bindinput='bindPassword'></input>
+  </view>
+  <view class='p_20 flex_i f_32 bor_bom'>
+    <view class='input_left'>电话号码</view>
+    <input placeholder='请输入电话号码' class='input ml_20 sheng f_28' value='{{store_phone}}' bindinput='bindPhone'></input>
+  </view>
+  <view class='p_20 flex_i f_32 bor_b'>
+    <view class='flex_i w100'>
+      <view class='input_left'>店铺地址</view>
+      <input placeholder='请输入店铺地址' class='input ml_20 sheng f_28' value='{{store_address}}' bindinput='bindAddress'></input>
+    </view>
+    <view class='f_28' bindtap='location'>
+      <i class="iconfont icon-shouhuodizhi c_5e8"></i>
+    </view>
+  </view>
+  <view class='p_20 f_32 bor_b'>
+    上传营业执照
+    <view class='f_24 c_999 upload flex_faj c_999 pr mt_20' bindtap='upload' data-id='1'>
+      <image class='img' src='{{licence_cert}}' wx:if="{{licence_cert!=''}}"></image>
+      <i class="iconfont icon-paizhao-kong c_999" wx:if="{{licence_cert==''}}"></i>
+      <view wx:if="{{licence_cert==''}}">上传图片</view>
+    </view>
+  </view>
+  <view class='p_20 f_32 bor_b'>
+    药品经营许可证
+    <view class='f_24 c_999 upload flex_faj c_999 pr mt_20' bindtap='upload' data-id='2'>
+      <image class='img' src='{{m_licence}}' wx:if="{{m_licence!=''}}"></image>
+      <i class="iconfont icon-paizhao-kong c_999" wx:if="{{m_licence==''}}"></i>
+      <view wx:if="{{m_licence==''}}">上传图片</view>
+    </view>
+  </view>
+  <view class='p_20 f_32 bor_b'>
+    医疗器械（二类备案或三类注册证）
+    <view class='f_24 c_999 upload flex_faj c_999 pr mt_20' bindtap='upload' data-id='3'>
+      <image class='img' src='{{p_licence}}' wx:if="{{p_licence!=''}}"></image>
+      <i class="iconfont icon-paizhao-kong c_999" wx:if="{{p_licence==''}}"></i>
+      <view wx:if="{{p_licence==''}}">上传图片</view>
+    </view>
+  </view>
+  <view class='p_20 f_32 bor_bom'>
+    执业药师资格证
+    <view class='f_24 c_999 upload flex_faj c_999 pr mt_20' bindtap='upload' data-id='4'>
+      <image class='img' src='{{q_licence}}' wx:if="{{q_licence!=''}}"></image>
+      <i class="iconfont icon-paizhao-kong c_999" wx:if="{{q_licence==''}}"></i>
+      <view wx:if="{{q_licence==''}}">上传图片</view>
+    </view>
+  </view>
+  <view class='p_20 flex_cb f_32 bor_b'>
+    入驻费用
+    <view class='f_30'>￥{{apply_money}}</view>
+  </view>
+  <navigator class='p_20 flex_cb f_28' url='../about/about'>
+    注：如有问题请联系客服
+  </navigator>
+  <view class='button bg_fe9 c_f f_32 w100'>
+    <form report-submit='true' class='formBtn' bindsubmit='bindtap'>
+      <button class='formBtn' form-type='submit'></button>
+    </form>
+    提交
+  </view>
+</view>
+<view class='p_20 f_30' wx:if="{{store_status==1}}">
+  登陆网址：
+  <text selectable="true">{{domain}}</text>
+</view>

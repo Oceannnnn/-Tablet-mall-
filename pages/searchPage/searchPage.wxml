@@ -1,0 +1,17 @@
+<!--pages/searchPage/searchPage.wxml-->
+<view class='search on flex_cb bor_b'>
+  <view class='searchBox flex_i f_28 ml_20'>
+    <i class="iconfont icon-sousuo mr_20 ml_20 c_029"></i>
+    <input placeholder='搜索商品关键字' value='{{searchValue}}' type='text' bindinput='searchValue' bindconfirm="bindconfirm"></input>
+  </view>
+  <view class='f_28 s_search' bindtap='bindsearch'>
+    搜索
+  </view>
+</view>
+<view class="nav-scroll bor_b">
+  <view class="scroll-view_H f_30">
+    <view wx:for="{{HeaderList}}" wx:key="item" data-id="{{item.id}}" bindtap='toList' class="nav-name">
+      <text class="{{item.id == currentId ? 'nav-hover' : ''}}">{{item.name}}</text>
+    </view>
+  </view>
+</view>

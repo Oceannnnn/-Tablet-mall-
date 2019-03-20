@@ -1,0 +1,55 @@
+<!--pages/bargainDetails/bargainDetails.wxml-->
+<view class='header bg_f'>
+  <view class='flex_cb p_20'>
+    <view class='f_30 flex_i'>
+      <image class='head_img mr_20' src='{{info.head_img}}'></image>
+      {{info.name}}
+    </view>
+    <!-- <view class='head_rule c_f f_28'>活动规则</view> -->
+  </view>
+  <view class='p_20 head_body flex f_28'>
+    <image src='{{info.pic}}' class='bargain_img'></image>
+    <view class='flex_fs bargain_right ml_20'>
+      <view class='sheng2 c_999'>{{info.name}}</view>
+      <view class='f_28'>
+        <view class='price'>￥
+          <text class='f_34'>{{info.price_old}}</text>
+        </view>
+        <view class='c_999'>{{info.s_num}}人已{{info.kan_price}}元拿</view>
+      </view>
+    </view>
+  </view>
+  <view class='mt_20 p_20'>
+    <progress percent="{{info.percent}}" activeColor="#FF4743" active />
+    <view class='flex_cb f_28 p_20'>
+      <view class='price'>已砍{{info.kan_money}}元</view>
+      <view class='c_999'>还剩{{info.now_money}}元</view>
+    </view>
+  </view>
+</view>
+<view animation="{{animationMiddleHeaderItem}}" class='bargainBtn flex_faj price pr mb_20' wx:if="{{info.status!=2}}">
+  <view wx:if="{{info.status==0}}">
+    <button open-type="share" class='formBtn'></button>
+    喊好友砍一刀
+  </view>
+  <view wx:elif="{{info.status==1}}" bindtap='partake'>砍价拿心仪商品</view>
+  <view wx:elif="{{info.status==3}}" bindtap='details' data-id='{{info.product_id}}' data-kan_id='{{id}}'>立即选择商品规格</view>
+</view>
+<view class='flex_faj c_f f_30 p_20' wx:if="{{info.status!=1}}">
+  <text wx:if="{{info.status==2}}">已结束</text> 
+  <text wx:elif="{{info.status==3}}">您的商品已成功砍到{{info.kan_price}}元</text> 
+  <text wx:else>还剩{{h}}:{{m}}:{{s}}结束</text>
+</view>
+<view class='footer'>
+  <view class='flex_faj f_34 price p_20'>砍价帮</view>
+  <view wx:for="{{bargainList}}" wx:key="" class='bargainList flex_cb bor_t p_20'>
+    <view class='flex'>
+      <image src='{{item.head_img}}' class='head_img mr_20'></image>
+      <view class='f_30'>
+        <view>{{item.name}}</view>
+        <view class='price f_28 mt_10'>来一起砍价</view>
+      </view>
+    </view>
+    <view class='f_34 price'>砍掉{{item.kj_money}}元</view>
+  </view>
+</view>

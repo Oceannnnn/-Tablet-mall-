@@ -1,0 +1,427 @@
+/**index.wxss**/
+@import "../../font/iconfont.wxss";
+@import "../goodsDetails/goodsDetails.wxss";
+
+page {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.main_header {
+  letter-spacing: 2px;
+  text-align: center;
+  position: relative;
+  margin-top: 100rpx;
+}
+
+.main_header swiper {
+  height: 370rpx;
+  width: 100%;
+}
+
+.main_header swiper image {
+  width: 100%;
+  height: 100%;
+}
+
+.main_header .text {
+  position: absolute;
+  font-size: 22rpx;
+  bottom: 2%;
+  left: 2%;
+  color: #fff;
+  padding: 10rpx;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 10rpx;
+}
+
+.text_body {
+  width: 100%;
+}
+
+.text_body swiper {
+  width: 80%;
+  height: 50rpx;
+}
+
+.guang {
+  position: absolute;
+  padding: 10rpx 20rpx;
+  top: 8%;
+  left: 2%;
+  z-index: 11;
+  color: #fff;
+  font-size: 28rpx;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 10rpx;
+}
+
+.items-body {
+  justify-content: space-between;
+}
+
+.advert image {
+  height: 190rpx;
+  width: 100%;
+}
+
+.item_list {
+  width: 50%;
+  box-sizing: border-box;
+}
+
+.item_list:nth-child(odd) {
+  border-right: 1px solid #f4f4f4;
+}
+
+.lazy {
+  width: 100%;
+  height: 336rpx;
+}
+
+.iconfont {
+  font-size: 50rpx;
+}
+
+.iconfont.on {
+  font-size: 40rpx;
+}
+
+.iconfont.icon-gonggao {
+  color: #f50;
+}
+
+.quick_item {
+  width: 25%;
+  margin: 20rpx 0;
+}
+
+.icon_item {
+  border-radius: 50%;
+  width: 90rpx;
+  height: 90rpx;
+}
+
+.icon_item .iconfont {
+  font-size: 46rpx;
+}
+
+.quick_body, .text_body {
+  padding: 20rpx 0;
+  flex-wrap: wrap;
+}
+
+.text_body {
+  /* background: #f7f7f7; */
+}
+
+.special_column .iconfont.left {
+  color: #ea5d34;
+}
+
+.conpon_left {
+  float: left;
+  border-right: 1px solid #fff;
+  padding: 0 20rpx 0 0;
+}
+
+.details_btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.img_li {
+  width: 100%;
+  height: 100%;
+}
+
+.redrnvelopes {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+}
+
+.red_shu {
+  width: 1px;
+  height: 200rpx;
+  background: #fff;
+}
+
+.red_img {
+  width: 70%;
+  height: 650rpx;
+  position: relative;
+}
+
+.red_img image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.red_iocn {
+  border: 1px solid #fff;
+  color: #fff;
+  border-radius: 50%;
+  margin-top: 40rpx;
+  width: 40rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+}
+
+.goRedrnvelopes {
+  position: absolute;
+  width: 100%;
+  height: 100rpx;
+  bottom: 50rpx;
+  left: 0;
+}
+
+.gouwuche {
+  bottom: 30rpx;
+}
+
+.myNews {
+  width: 40rpx;
+  height: 40rpx;
+  background: #ff3248;
+  border-radius: 50%;
+  position: absolute;
+  top: -10rpx;
+  right: -10rpx;
+}
+
+.searchBox {
+  width: 80%;
+  background: rgba(248, 248, 248, 0.5);
+  height: 60rpx;
+  line-height: 60rpx;
+  border-radius: 20rpx;
+  color: #666;
+  z-index: 10;
+}
+
+.searchBox.on {
+  width: 90%;
+  margin-left: 5%;
+}
+
+.search {
+  z-index: 100;
+  height: 100rpx;
+  position: fixed;
+  top: 0;
+  left: 0%;
+  width: 100%;
+  padding: 20rpx 0;
+}
+
+.search.box {
+  height: 60rpx;
+}
+
+.s_search {
+  width: 20%;
+  text-align: center;
+  padding: 10rpx 0;
+}
+
+.search.on {
+  background: #fff;
+}
+
+.collage_scroll {
+  white-space: nowrap;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.collageList {
+  display: inline-block;
+  margin: 10rpx;
+}
+
+.collage_pic {
+  width: 150rpx;
+  height: 150rpx;
+}
+
+.num_collage {
+  padding: 4rpx 10rpx;
+  border-radius: 30rpx;
+  background: #e83d3a;
+  color: #fff;
+  width: 44%;
+  font-size: 20rpx;
+  text-align: center;
+}
+
+.xian_body {
+  flex-wrap: wrap;
+}
+
+.xianList {
+  width: 25%;
+}
+
+.xianList .collage_pic {
+  width: 150rpx;
+  height: 150rpx;
+}
+
+.storeList .lazy {
+  height: 190rpx;
+}
+
+swiper.storeList {
+  height: 270rpx;
+}
+
+.storeListItem {
+  width: 200rpx;
+  border: 1px solid #dbdbdb;
+}
+
+.ad_image {
+  width: 120rpx;
+  height: 120rpx;
+}
+
+.ad_tuilist {
+  width: 25%;
+  display: flex;
+}
+
+.article_image {
+  width: 180rpx;
+  height: 160rpx;
+}
+
+.article_r {
+  width: 70%;
+}
+
+.article_r.on {
+  width: 100%;
+}
+
+.clear {
+  clear: both;
+  overflow: hidden;
+}
+
+.flex1.on {
+  border-left: 1px solid #eee;
+}
+
+.tabTit {
+  border-bottom: solid 1px #eee;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #fff;
+  z-index: 1;
+  font-size: 30rpx;
+  padding: 30rpx 0;
+  text-align: center;
+}
+
+.price_body {
+  position: absolute;
+  width: 100%;
+  top: 42px;
+  left: 0;
+  box-shadow: 1px 1px 6px #ccc;
+  flex-wrap: wrap;
+}
+
+.flex1 {
+  width: 50%;
+}
+
+navigator {
+  display: inline;
+}
+
+.items-body {
+  margin-top: 100rpx;
+}
+
+.flex1.active {
+  color: #e93d3b;
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.triangle_border_up {
+  border-width: 0 10rpx 10rpx;
+  border-color: transparent transparent #333;
+}
+
+.triangle_border_down {
+  border-width: 10rpx 10rpx 0;
+  border-color: #333 transparent transparent;
+}
+
+.triangle_border_up.on {
+  border-color: transparent transparent #e93d3b;
+}
+
+.triangle_border_down.on {
+  border-color: #e93d3b transparent transparent;
+}
+
+.zanwu {
+  margin-top: 300rpx;
+}
+
+.index_icon {
+  bottom: 50rpx;
+}
+
+.contentText {
+  position: absolute;
+  width: 88%;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.clicktoggle_qudao {
+  background: rgba(126, 140, 148, 0.2);
+  padding: 20rpx 0;
+}
+
+.aboutBox {
+  border-radius: 20rpx;
+  overflow: hidden;
+}
+
+.clicktoggle_qudao.on {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.tab_toggle_hide {
+  height: 200rpx;
+}
+
+.tab_toggle_show {
+  height: auto;
+}

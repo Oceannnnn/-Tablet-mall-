@@ -1,0 +1,8 @@
+/* pages/searchPage/searchPage.wxss */
+@import "../index/index.wxss";
+.nav-scroll{
+  margin-top: 140rpx;
+}
+.nav-name{
+  width: 50%;
+}

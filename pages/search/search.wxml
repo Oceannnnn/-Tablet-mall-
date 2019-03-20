@@ -1,0 +1,34 @@
+<!--pages/search/search.wxml-->
+<view class="tabTit flex_i bor_t" wx:if="{{search_type==1}}">
+  <view class="flex1 {{item.tab==currentId?'active':''}} {{index==0?'':'on'}}" wx:for="{{tabTxt}}" wx:key="type" data-index="{{index}}" bindtap="filterTab" data-tab="{{item.tab}}" data-type='{{item.type}}'>
+    <text>{{item.name}}</text>
+  </view>
+</view>
+<view class="items-body {{search_type==1?'':'on'}}" wx:if="{{itemsList!=''}}">
+  <view wx:for="{{itemsList}}" wx:key="{{itemName}}" wx:for-item="itemName" class='s_list p_20 bor_b pr flex'>
+    <form report-submit='true' class='formBtn' data-id='{{search_type==1?itemName.goods_id:itemName.store_id}}' data-type='0' bindsubmit='{{search_type==1?"details":"toStore"}}'>
+      <button class='formBtn' form-type='submit'></button>
+    </form>
+    <image src='{{search_type==1?itemName.pic:itemName.store_pic}}' class='s_image'></image>
+    <view class='search_right ml_20'>
+      <view class='f_34'>店铺：{{itemName.store_name}}</view>
+      <view class='mt_10 c_999 f_30'>{{itemName.general_name}}</view>
+      <view class='flex_cb mt_10'>
+        <view class='f_28 c_999'>{{itemName.distance}}公里</view>
+        <view class='f_34 price' wx:if="{{search_type==1}}">￥{{itemName.price}}</view>
+      </view>
+      <view class='flex_i mt_10 f_28'>
+        <view wx:if="{{itemName.is_coupon}}" class='price'>有优惠</view>
+        <view wx:if="{{itemName.is_integral==1&&search_type==1}}" class='ml_20 c_029'>有积分</view>
+      </view>
+      <view class='mt_10 f_28 sheng' wx:if="{{search_type==2}}">地址:{{itemName.store_address}}</view>
+    </view>
+  </view>
+</view>
+<view wx:else class='flex_af'>
+  <image src='../../images/zanwu.png' class='zanwu mb_20'></image>
+  <text class='f_32 c_999 mt_20'>暂无数据</text>
+</view>
+<view class='flex_faj bg_f gouwuche index_icon' bindtap='goTop' hidden='{{!floorstatus}}'>
+  <i class="iconfont icon-huidaodingbu"></i>
+</view>

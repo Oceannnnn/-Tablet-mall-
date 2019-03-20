@@ -1,0 +1,10 @@
+/* pages/integral/integral.wxss */
+@import '../index/index.wxss';
+.s_image{
+  width: 220rpx;
+  height: 200rpx;
+  border-radius: 10rpx;
+}
+.search_right{
+  width: 65%;
+}

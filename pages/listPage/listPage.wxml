@@ -1,0 +1,40 @@
+<!--pages/listPage/listPage.wxml-->
+<view class="tabTit flex_i bor_t">
+  <!-- {{index==0?'':'on'}} -->
+  <view class="flex1 {{item.tab==currentId?'active':''}} {{index==0?'':'on'}}" wx:for="{{tabTxt}}" wx:key="type" data-index="{{index}}" bindtap="filterTab" data-tab="{{item.tab}}" data-type='{{item.type}}'>
+    <text>{{item.name}}</text>
+  </view>
+</view>
+<view class="items-body flex_f" wx:if="{{itemsList!=''}}">
+  <view wx:for="{{itemsList}}" wx:key="{{itemName}}" wx:for-item="itemName" class='item_list p_20 bor_b pr'>
+    <form report-submit='true' class='formBtn' data-id='{{itemName.goods_id}}' data-type='0' bindsubmit='details'>
+      <button class='formBtn' form-type='submit'></button>
+    </form>
+    <view class="item-img mb_20 pr">
+      <form report-submit='true' class='formBtn' data-id='{{itemName.goods_id}}' data-type='0' bindsubmit='details'>
+        <button class='formBtn' form-type='submit'></button>
+      </form>
+      <image class="lazy" src="{{itemName.thumbnail}}" />
+      <view class='sheng f_28 contentText c_f p_20'>{{itemName.general_name}}</view>
+    </view>
+    <view class='flex_i mb_20'>
+      <i class="iconfont icon-dianpu"></i>
+      <view class='sheng f_30 ml_20'>{{itemName.store_name}}</view>
+    </view>
+    <view class='sheng mb_20 f_28 c_999'>规格:{{itemName.spec}}</view>
+    <view class='sheng mb_20 f_28 c_999'>有效期:{{itemName.end_date}}</view>
+    <view class='sheng mb_20 f_28 c_999'>生产商:{{itemName.manufacturer}}</view>
+    <view class='flex_i f_32'>
+      <view class="price" wx:if="{{isRebate==2}}">￥{{itemName.price}}</view>
+      <view class="price mr_10" wx:if="{{isRebate==1}}">￥{{itemName.spec_price}}</view>
+      <view class="c_999 text_l f_24" wx:if="{{isRebate==1}}">￥{{itemName.price}}</view>
+    </view>
+  </view>
+</view>
+<view wx:else class='flex_af'>
+  <image src='../../images/zanwu.png' class='zanwu mb_20'></image>
+  <text class='f_32 c_999 mt_20'>暂无数据</text>
+</view>
+<view class='flex_faj bg_f gouwuche index_icon' bindtap='goTop' hidden='{{!floorstatus}}'>
+  <i class="iconfont icon-huidaodingbu"></i>
+</view>

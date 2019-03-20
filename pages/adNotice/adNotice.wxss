@@ -1,0 +1,2 @@
+/* pages/adNotice/adNotice.wxss */
+@import "../../wxParse/wxParse.wxss";

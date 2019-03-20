@@ -1,0 +1,151 @@
+<!--index.wxml-->
+<import src="../../wxParse/wxParse.wxml" />
+<view class='search on bor_b box'>
+  <navigator class='searchBox flex_i f_28 on' url='../searchPage/searchPage'>
+    <i class="iconfont icon-sousuo mr_20 ml_20"></i>
+    搜索你想要的宝贝
+  </navigator>
+</view>
+<view class='main_header'>
+  <swiper indicator-dots interval="3000" duration="1000" autoplay='true' circular>
+    <block wx:for="{{imgUrls}}" wx:key="{{itemName}}" wx:for-item="itemName">
+      <swiper-item data-id="{{itemName.goods_id}}" data-type="0" bindtap='details'>
+        <text class='text'>{{itemName.title}}</text>
+        <image src="{{itemName.pic}}" class="slide-image" />
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<view class='flex_i quick_body'>
+  <navigator class='quick_item flex_af f_28 pr' url='../consumer/consumer'>
+    <form report-submit='true' class='formBtn' bindsubmit='bindsubmit'>
+      <button class='formBtn' form-type='submit'></button>
+    </form>
+    <view class='mb_10 icon_item flex_faj'>
+      <image src='{{navicon.coupon}}' class='w100'></image>
+    </view>
+    <text>优惠券</text>
+  </navigator>
+  <navigator class='quick_item flex_af f_28 pr' url='../listPage/listPage?type=1&id=""'>
+    <form report-submit='true' class='formBtn' bindsubmit='bindsubmit'>
+      <button class='formBtn' form-type='submit'></button>
+    </form>
+    <view class='mb_10 icon_item flex_faj'>
+      <image src='{{navicon.specail}}' class='w100'></image>
+    </view>
+    <text>天天特价</text>
+  </navigator>
+  <navigator class='quick_item flex_af f_28 pr' url='../search/search?tf_hours=1&search_type=2'>
+    <form report-submit='true' class='formBtn' bindsubmit='bindsubmit'>
+      <button class='formBtn' form-type='submit'></button>
+    </form>
+    <view class='mb_10 icon_item flex_faj'>
+      <image src='{{navicon.hours}}' class='w100'></image>
+    </view>
+    <text>24小时</text>
+  </navigator>
+  <navigator class='quick_item flex_af f_28 pr' url='../secKill/secKill'>
+    <form report-submit='true' class='formBtn' bindsubmit='bindsubmit'>
+      <button class='formBtn' form-type='submit'></button>
+    </form>
+    <view class='mb_10 icon_item flex_faj'>
+      <image src='{{navicon.sec}}' class='w100'></image>
+    </view>
+    <text>限时抢购</text>
+  </navigator>
+  <navigator class='quick_item flex_af f_28 pr' url='../bargain/bargain'>
+    <form report-submit='true' class='formBtn' bindsubmit='bindsubmit'>
+      <button class='formBtn' form-type='submit'></button>
+    </form>
+    <view class='mb_10 icon_item flex_faj'>
+      <image src='{{navicon.kan}}' class='w100'></image>
+    </view>
+    <text>砍价</text>
+  </navigator>
+  <navigator class='quick_item flex_af f_28 pr' url='../collage/collage'>
+    <view class='mb_10 icon_item flex_faj'>
+      <image src='{{navicon.group}}' class='w100'></image>
+    </view>
+    <text>拼单</text>
+  </navigator>
+  <navigator class='quick_item flex_af f_28 pr' url='../integral/integral'>
+    <view class='mb_10 icon_item flex_faj'>
+      <image src='{{navicon.integral}}' class='w100'></image>
+    </view>
+    <text>积分兑换</text>
+  </navigator>
+  <navigator class='quick_item flex_af f_28 pr' url='../collage/collage'>
+    <view class='mb_10 icon_item flex_faj'>
+      <i class="iconfont icon-tuikuan"></i>
+    </view>
+    <text>11</text>
+  </navigator>
+</view>
+<view class='flex_i text_body bor_top'>
+  <i class="iconfont icon-gonggao mr_20 ml_20"></i>
+  <swiper interval="3000" duration="1000" autoplay='true' circular vertical>
+    <block wx:for="{{textList}}" wx:key="{{itemName}}" wx:for-item="itemName">
+      <swiper-item>
+        <text class='sheng f_28' bindtap='bindNotice' data-id='{{itemName.id}}' data-type='1'>{{itemName.content}}</text>
+      </swiper-item>
+    </block>
+  </swiper>
+  <image class="arrow ml_20" src="../../images/last_Dawn.png"></image>
+</view>
+<view class='bor_top p_20' wx:if="{{recommend_goods!=''}}">
+  <image class='w100' mode='widthFix' src='../../images/index1.png'></image>
+  <view class='flex_f f_28 pr bor_t mt_20'>
+    <view wx:for="{{recommend_goods}}" wx:key="{{itemName}}" wx:for-item="itemName" class='item_list p_20 bor_b pr'>
+      <form report-submit='true' class='formBtn' data-id='{{itemName.goods_id}}' data-type='0' bindsubmit='bindtapDetails'>
+        <button class='formBtn' form-type='submit'></button>
+      </form>
+      <view class="item-img mb_10 pr">
+        <form report-submit='true' class='formBtn' data-id='{{itemName.goods_id}}' data-type='0' bindsubmit='bindtapDetails'>
+          <button class='formBtn' form-type='submit'></button>
+        </form>
+        <image class="lazy" src="{{itemName.thumbnail}}" />
+      </view>
+      <view class='sheng mb_10 f_28'>{{itemName.general_name}}</view>
+      <view class='flex_i mb_10'>
+        <i class="iconfont icon-dianpu on"></i>
+        <view class='sheng f_30 ml_20'>{{itemName.store_name}}</view>
+      </view>
+      <view class='flex_i f_32'>
+        <view class="price">￥{{itemName.price}}</view>
+      </view>
+    </view>
+  </view>
+  <navigator class="flex_faj f_30 mt_20" url='../listPage/listPage?type=3&id=""'>
+    <text class='bor_b c_999'>查看更多>></text>
+  </navigator>
+</view>
+<view class='bor_top p_20' wx:if="{{article!=''}}">
+  <image class='w100' mode='widthFix' src='../../images/index3.png'></image>
+  <view class="pr flex articleItem p_20 {{idx>0?'mt_20':''}}" wx:for-index="idx" wx:for="{{article}}" wx:key="">
+    <form report-submit='true' class='formBtn' bindsubmit='bindtapArticle' data-id='{{item.art_id}}'>
+      <button class='formBtn' form-type='submit'></button>
+    </form>
+    <!-- <image src="{{item.thumb}}" class="article_image"></image> -->
+    <view class='ml_20 article_r on'>
+      <view class='mt_10 sheng f_34'>{{item.title}}</view>
+      <view class='mt_20 c_999 sheng2 f_28'>{{item.introduction}}</view>
+    </view>
+  </view>
+  <navigator class="flex_faj f_30 mt_20" url='../consultation/consultation'>
+    <text class='bor_b c_999'>查看更多>></text>
+  </navigator>
+</view>
+<view class='bor_top'>
+  <image class='w100' mode='widthFix' src='../../images/index2.png'></image>
+  <view class='aboutBox pr'>
+    <view class="p_20 {{qudao_num == 1?'tab_toggle_show':'tab_toggle_hide'}}">
+      <template is="wxParse" data="{{wxParseData:details.nodes}}" />
+    </view>
+    <view data-num="1" bindtap="clicktoggle_qudao" class='clicktoggle_qudao flex_faj mt_20 f_30 c_f on' wx:if="{{qudao_num==0}}">展开更多</view>
+    <view data-num="0" bindtap="clicktoggle_qudao" class='clicktoggle_qudao flex_faj mt_20 f_30 c_f' wx:else>收起</view>
+  </view>
+</view>
+<view class='flex_faj bg_f gouwuche' bindtap='goTop' hidden='{{!floorstatus}}'>
+  <i class="iconfont icon-huidaodingbu"></i>
+</view>
+<navigator class='flex_af f_28 p_40' target="miniProgram" open-type="navigate" appId="wx1773ca9a5221af5b">技术支持 @ 风擎网络科技</navigator>

@@ -1,0 +1,13 @@
+/* pages/bargain/bargain.wxss */
+.bargain_img{
+  width: 200rpx;
+  height: 200rpx;
+}
+.bargain_right{
+  width: 68%;
+}
+.button{
+  padding: 20rpx;
+  letter-spacing: 1px;
+  border-radius: 10rpx;
+}

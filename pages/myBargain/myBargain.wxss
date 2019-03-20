@@ -1,0 +1,8 @@
+/* pages/myBargain/myBargain.wxss */
+@import "../bargain/bargain.wxss";
+.toMyBargain3{
+  padding: 20rpx 0;
+  border: 1px solid #E90606;
+  border-radius: 10rpx;
+  margin: 20rpx;
+}

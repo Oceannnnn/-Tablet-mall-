@@ -1,0 +1,77 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/adNotice/adNotice",
+    "pages/refund/refund",
+    "pages/serviceType/serviceType",
+    "pages/orderDetails/orderDetails",
+    "pages/integral/integral",
+    "pages/searchPage/searchPage",
+    "pages/bargain/bargain",
+    "pages/myBargain/myBargain",
+    "pages/collage/collage",
+    "pages/bargainDetails/bargainDetails",
+    "pages/confirmationOrder/confirmationOrder",
+    "pages/collection/collection",
+    "pages/listPage/listPage",
+    "pages/secKill/secKill",
+    "pages/search/search",
+    "pages/store/store",
+    "pages/adShop/adShop",
+    "pages/cart/cart",
+    "pages/logistics/logistics",
+    "pages/myadd/myadd",
+    "pages/payResults/payResults",
+    "pages/consultationDetails/consultationDetails",
+    "pages/consultation/consultation",
+    "pages/goodsDetails/goodsDetails",
+    "pages/classify/classify",
+    "pages/allorder/allorder",
+    "pages/coupons/coupons",
+    "pages/useCoupon/useCoupon",
+    "pages/consumer/consumer",
+    "pages/my/my"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "泉药购",
+    "navigationBarTextStyle": "black"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "tabBar": {
+    "color": "#989898",
+    "backgroundColor": "#fff",
+    "selectedColor": "#333333",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/index.png",
+        "selectedIconPath": "images/index_active.png"
+      },
+      {
+        "pagePath": "pages/classify/classify",
+        "text": "分类",
+        "iconPath": "images/classify.png",
+        "selectedIconPath": "images/classify_active.png"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "text": "购物车",
+        "iconPath": "images/cart.png",
+        "selectedIconPath": "images/cart_active.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "images/my.png",
+        "selectedIconPath": "images/my_active.png"
+      }
+    ]
+  }
+}

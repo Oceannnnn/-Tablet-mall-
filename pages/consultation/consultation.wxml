@@ -1,0 +1,13 @@
+<!--pages/consultation/consultation.wxml-->
+<view class='p_20'>
+  <view class="pr flex articleItem p_20 {{idx>0?'mt_20':''}} bor_b" wx:for-index="idx" wx:for="{{article}}" wx:key="">
+    <form report-submit='true' class='formBtn' bindsubmit='bindtapArticle' data-id='{{item.art_id}}'>
+      <button class='formBtn' form-type='submit'></button>
+    </form>
+    <image src="{{item.thumb}}" class="article_image"></image>
+    <view class='ml_20 article_r'>
+      <view class='mt_10 sheng f_34'>{{item.title}}</view>
+      <view class='mt_20 c_999 sheng2 f_28'>{{item.introduction}}</view>
+    </view>
+  </view>
+</view>

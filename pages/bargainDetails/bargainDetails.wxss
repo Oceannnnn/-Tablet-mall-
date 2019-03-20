@@ -1,0 +1,55 @@
+/* pages/bargainDetails/bargainDetails.wxss */
+
+page {
+  background: #f52002;
+  min-height: 100vh;
+}
+
+.header {
+  border-radius: 10rpx;
+  width: 94%;
+  margin: 20rpx auto 0;
+}
+
+.head_img {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  border: 1px solid #f52002;
+}
+
+.head_rule {
+  padding: 5rpx 15rpx;
+  background: #c9c9c9;
+  border-radius: 20rpx;
+}
+
+.head_body {
+  background: #eaeaea;
+}
+
+progress {
+  border-radius: 100px;
+  overflow: hidden;
+}
+.bargain_img{
+  width: 200rpx;
+  height: 200rpx;
+}
+.bargain_right{
+  width: 66%;
+}
+.bargainBtn{
+  width: 90%;
+  background: #F8D356;
+  font-size: 36rpx;
+  padding: 20rpx 0;
+  margin: 30rpx auto 0 ;
+  border-radius: 20rpx;
+}
+.footer{
+  border-radius: 10rpx;
+  width: 94%;
+  margin: 20rpx auto 0;
+  background: rgba(255, 255, 255, 0.6)
+}

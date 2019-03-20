@@ -1,0 +1,33 @@
+<!--pages/integral/integral.wxml-->
+<view class="tabTit flex_i bor_t">
+ <!-- {{index==0?'':'on'}} -->
+  <view class="flex1 {{item.tab==currentId?'active':''}} {{index==0?'':'on'}} {{index==1?'flex_ja':''}}" wx:for="{{tabTxt}}" wx:key="type" data-index="{{index}}" bindtap="filterTab" data-tab="{{item.tab}}" data-type='{{item.type}}' data-triangle="{{index==1?'triangle':''}}">
+    <text>{{item.name}}</text>
+    <view class='flex_af ml_10' wx:if="{{index==1}}">
+      <view class="triangle_border_up mb_10 {{triangle==0?'on':''}} triangle"></view>
+      <view class="triangle_border_down {{triangle==1?'on':''}} triangle"></view>
+    </view>
+  </view>
+</view>
+<view class="items-body" wx:if="{{itemsList!=''}}">
+  <view wx:for="{{itemsList}}" wx:key="{{itemName}}" wx:for-item="itemName" class='s_list p_20 bor_b pr flex'>
+    <form report-submit='true' class='formBtn' data-id='{{itemName.goods_id}}' data-type='0' bindsubmit='details'>
+      <button class='formBtn' form-type='submit'></button>
+    </form>
+    <image src='{{itemName.thumbnail}}' class='s_image'></image>
+    <view class='search_right ml_20 flex_fs'>
+      <view class='mt_10 f_30'>{{itemName.general_name}}</view>
+      <view>
+        <view class='price'>{{itemName.integral}} <text class='f_30'>积分</text> <text wx:if="{{itemName.integral_price!=''}}" class='f_30'>+{{itemName.integral_price}}元</text></view>
+        <view class='mt_10 c_999 f_28'>市场价：{{itemName.price}}元</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view wx:else class='flex_af'>
+  <image src='../../images/zanwu.png' class='zanwu mb_20'></image>
+  <text class='f_32 c_999 mt_20'>暂无数据</text>
+</view>
+<view class='flex_faj bg_f gouwuche index_icon' bindtap='goTop' hidden='{{!floorstatus}}'>
+  <i class="iconfont icon-huidaodingbu"></i>
+</view>

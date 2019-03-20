@@ -1,0 +1,87 @@
+/* pages/AdSettled/AdSettled.wxss */
+@import "../../font/iconfont.wxss";
+/* @import "../toLogin/toLogin.wxss"; */
+.upload {
+  width: 140rpx;
+  height: 140rpx;
+  border: 1px solid #999;
+  border-radius: 10rpx;
+  margin-left: 140rpx;
+}
+
+.icon-paizhao-kong {
+  font-size: 60rpx;
+}
+
+.addressLeft {
+  width: 75%;
+}
+
+.img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.checkbox_group {
+  width: 80%;
+}
+
+.input_left {
+  width: 22%;
+}
+.input {
+  width: 76%;
+}
+
+.enter {
+  position: absolute;
+  right: 20rpx;
+  top: 25rpx;
+}
+
+textarea {
+  height: 160rpx;
+}
+
+.upload.on {
+  margin: 0;
+}
+
+.jia {
+  font-size: 60rpx;
+}
+
+.wx-switch-input {
+  width: 42px !important;
+  height: 20px !important;
+}
+
+.wx-switch-input::before {
+  width: 41px !important;
+  height: 20px !important;
+}
+
+.wx-switch-input::after {
+  width: 18px !important;
+  height: 18px !important;
+}
+.button{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  padding: 30rpx 0;
+  text-align: center;
+  z-index: 999;
+}
+.img-de{
+  width: 100rpx;
+  height: 100rpx;
+}
+.img-de .img {
+  width: 45rpx;
+  height: 45rpx;
+  left: 53rpx;
+}

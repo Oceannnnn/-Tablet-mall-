@@ -1,0 +1,2 @@
+/* pages/listPage/listPage.wxss */
+@import '../index/index.wxss';
